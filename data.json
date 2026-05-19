@@ -1,0 +1,210 @@
+{
+  "settings": {
+    "company": "Luncena",
+    "title": "Pesquisa de Clima Organizacional",
+    "minimumScore": 75,
+    "adminUser": "admin",
+    "adminPass": "lucena2026"
+  },
+  "works": [
+    {
+      "code": "2221",
+      "name": "PORTO MANT. 2024",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 102
+    },
+    {
+      "code": "2277",
+      "name": "ADUTORA",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 70
+    },
+    {
+      "code": "2262",
+      "name": "RENOVAÇÕES",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 242
+    },
+    {
+      "code": "2211",
+      "name": "PACOTE IV MA",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 3
+    },
+    {
+      "code": "2264",
+      "name": "PACOTE 07",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 191
+    },
+    {
+      "code": "2263",
+      "name": "INTEGRIDADE KM 296",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 73
+    },
+    {
+      "code": "2281",
+      "name": "KM 374",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 149
+    },
+    {
+      "code": "",
+      "name": "BALANÇA SILO I",
+      "state": "MA",
+      "type": "Privada",
+      "expectedRespondents": 12
+    },
+    {
+      "code": "2273",
+      "name": "DRENAGEM CARAJÁS",
+      "state": "PA",
+      "type": "Privada",
+      "expectedRespondents": 113
+    },
+    {
+      "code": "2278",
+      "name": "SERRA LESTE",
+      "state": "PA",
+      "type": "Privada",
+      "expectedRespondents": 170
+    },
+    {
+      "code": "2211",
+      "name": "PACOTE IV PA",
+      "state": "PA",
+      "type": "Privada",
+      "expectedRespondents": 3
+    }
+  ],
+  "areas": [
+    "Almoxarifado",
+    "Administrativo",
+    "Comunicação",
+    "Compras/Suprimentos",
+    "Contabilidade",
+    "Controladoria",
+    "Diretoria",
+    "Engenharia",
+    "Financeiro",
+    "Informática/TI",
+    "Jurídico",
+    "Licitação/Contratos",
+    "Logística",
+    "Manutenção",
+    "Operacional",
+    "Orçamento",
+    "Planejamento",
+    "Qualidade",
+    "RH/DP",
+    "Sala Técnica",
+    "Serviços/Apoio/Recepção",
+    "SESMT"
+  ],
+  "profiles": [
+    "Administrativo",
+    "Operacional"
+  ],
+  "pillars": [
+    {
+      "id": "seguranca",
+      "name": "Saúde, Segurança e Bem-estar",
+      "shortName": "Segurança e Bem-estar",
+      "icon": "🛡️",
+      "description": "Avalia se a empresa protege as pessoas, promove segurança e cuida do bem-estar físico e emocional.",
+      "questions": [
+        "Sinto que a Luncena valoriza a vida e a segurança das pessoas em primeiro lugar.",
+        "Tenho condições seguras para realizar meu trabalho.",
+        "A empresa orienta e cobra práticas de segurança de forma clara.",
+        "Sinto que minha saúde e bem-estar são considerados pela empresa."
+      ]
+    },
+    {
+      "id": "ambienteFisico",
+      "name": "Ambiente Físico e Condições de Trabalho",
+      "shortName": "Ambiente Físico",
+      "icon": "🏗️",
+      "description": "Avalia estrutura, ferramentas, equipamentos e condições práticas para execução do trabalho.",
+      "questions": [
+        "Tenho os recursos, ferramentas e equipamentos necessários para realizar bem meu trabalho.",
+        "O ambiente físico da obra/unidade é adequado para minhas atividades.",
+        "As condições de higiene, organização e infraestrutura atendem às necessidades do trabalho.",
+        "A empresa age rapidamente quando há problemas estruturais ou operacionais."
+      ]
+    },
+    {
+      "id": "lideranca",
+      "name": "Liderança e Gestão",
+      "shortName": "Liderança",
+      "icon": "👷",
+      "description": "Avalia confiança, proximidade, orientação e qualidade da gestão.",
+      "questions": [
+        "Minha liderança orienta com clareza o que espera de mim.",
+        "Minha liderança escuta a equipe e considera nossas opiniões.",
+        "Recebo feedbacks úteis para melhorar meu desempenho.",
+        "Confio nas decisões tomadas pela liderança da minha área."
+      ]
+    },
+    {
+      "id": "comunicacao",
+      "name": "Comunicação Interna",
+      "shortName": "Comunicação Interna",
+      "icon": "💬",
+      "description": "Avalia clareza das informações, alinhamento e transparência.",
+      "questions": [
+        "Recebo as informações necessárias para realizar meu trabalho.",
+        "A comunicação entre empresa, liderança e equipe é clara.",
+        "Entendo os objetivos e prioridades da Luncena.",
+        "As mudanças importantes são comunicadas com antecedência e transparência."
+      ]
+    },
+    {
+      "id": "etica",
+      "name": "Ética, Respeito e Confiança",
+      "shortName": "Ética e Respeito",
+      "icon": "⚖️",
+      "description": "Avalia integridade, justiça, respeito e coerência entre discurso e prática.",
+      "questions": [
+        "A empresa age com ética e integridade no dia a dia.",
+        "Sinto que sou tratado com respeito no ambiente de trabalho.",
+        "Percebo coerência entre os valores da empresa e as atitudes praticadas.",
+        "Sinto segurança para falar sobre problemas sem medo de retaliação."
+      ]
+    },
+    {
+      "id": "remuneracao",
+      "name": "Remuneração, Benefícios e Reconhecimento",
+      "shortName": "Remuneração e Benefícios",
+      "icon": "💰",
+      "description": "Avalia percepção de justiça, valorização e reconhecimento.",
+      "questions": [
+        "Considero minha remuneração compatível com minhas responsabilidades.",
+        "Os benefícios oferecidos atendem às minhas principais necessidades.",
+        "Sinto que meu esforço e dedicação são reconhecidos.",
+        "A empresa valoriza quem entrega bons resultados."
+      ]
+    },
+    {
+      "id": "engajamento",
+      "name": "Compromisso, Engajamento e Orgulho",
+      "shortName": "Engajamento",
+      "icon": "🤝",
+      "description": "Avalia vínculo emocional, motivação e intenção de permanência.",
+      "questions": [
+        "Tenho orgulho de trabalhar na Luncena.",
+        "Sinto motivação para contribuir com os resultados da empresa.",
+        "Pretendo continuar trabalhando na Luncena nos próximos anos.",
+        "Eu recomendaria a Luncena como um bom lugar para trabalhar."
+      ]
+    }
+  ],
+  "simulatedResponses": []
+}

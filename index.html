@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pesquisa de Clima Organizacional | Lucena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index">
+  <div class="app-shell home-page-shell">
+    <header class="landing-hero">
+      <div class="landing-hero__bg"></div>
+      <div class="landing-hero__grid"></div>
+      <div class="landing-hero__content">
+        <div class="landing-side landing-side--left">
+          <img src="assets/hand-phone.png" alt="Ilustração celular pesquisa" class="landing-phone">
+        </div>
+
+        <div class="landing-center">
+          <img src="assets/logo-clima.png" alt="Pesquisa de Clima Organizacional" class="landing-clima-logo">
+          <div class="landing-values">
+            <span>Agilidade</span>
+            <span>Ética</span>
+            <span>Solução</span>
+            <span>Solidariedade</span>
+            <span>Respeito</span>
+            <span>Compromisso</span>
+          </div>
+        </div>
+
+        <div class="landing-side landing-side--right">
+          <img src="assets/logo-lucena.png" alt="Lucena Infraestrutura" class="landing-brand-logo">
+        </div>
+      </div>
+
+      <a class="landing-admin-btn" href="admin.html">Painel administrativo</a>
+    </header>
+
+    <main class="home-main wrap" id="formulario">
+      <div class="grid grid-2 home-cards-grid">
+        <section class="card home-card">
+          <div class="section-title home-title-row">
+            <h2>Identificação inicial</h2>
+          </div>
+
+          <div class="notice home-notice">
+            As respostas coletadas nesta pesquisa serão tratadas de forma confidencial e utilizadas exclusivamente para análise de clima organizacional. Os resultados serão apresentados de maneira consolidada por obra/contrato, sem exposição individual dos respondentes, com o objetivo de compor a pontuação global e orientar planos de ação voltados à melhoria do ambiente de trabalho.
+          </div>
+
+          <form id="loginForm" class="form home-form">
+            <div class="field">
+              <label>Nome completo</label>
+              <input name="name" required placeholder="Digite seu nome">
+            </div>
+
+            <div class="grid grid-2 compact-grid">
+              <div class="field">
+                <label>Matrícula ou CPF</label>
+                <input name="registration" required placeholder="000000">
+              </div>
+              <div class="field">
+                <label>Gênero</label>
+                <select name="gender">
+                  <option>Não informado</option>
+                  <option>Feminino</option>
+                  <option>Masculino</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-2 compact-grid">
+              <div class="field">
+                <label>Obra</label>
+                <select name="unit" id="units" required></select>
+              </div>
+              <div class="field">
+                <label>Área / Setor</label>
+                <select name="area" id="area" required></select>
+              </div>
+            </div>
+
+            <div class="grid grid-2 compact-grid">
+              <div class="field">
+                <label>Perfil</label>
+                <select name="profile" id="profile" required></select>
+              </div>
+              <div class="field">
+                <label>Cargo / Função</label>
+                <input name="role" required placeholder="Ex.: Operador, Auxiliar, Analista, Encarregado">
+              </div>
+            </div>
+
+            <button class="btn home-submit-btn">Iniciar pesquisa</button>
+          </form>
+        </section>
+
+        <section class="card home-card home-info-card">
+          <div class="section-title home-title-row">
+            <h2>Como funciona esta pesquisa</h2>
+          </div>
+
+          <div class="home-info-stack">
+            <div class="info-kpi-row">
+              <span>Escolha notas de 1 a 5 para cada pergunta</span>
+              <strong>1 a 5</strong>
+            </div>
+            <div class="info-kpi-row">
+              <span>Tempo estimado para resolução do questionário</span>
+              <strong>8 a 12 min</strong>
+            </div>
+            <div class="info-kpi-row">
+              <span>Pilares avaliados</span>
+              <strong>7</strong>
+            </div>
+            <div class="info-kpi-row">
+              <span>Perguntas</span>
+              <strong>30</strong>
+            </div>
+          </div>
+
+          <p class="home-info-text">
+            A pesquisa mede saúde e segurança, ambiente físico, liderança, comunicação, ética, remuneração, reconhecimento, engajamento e orgulho de pertencer.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">Lucena Infraestrutura, Pesquisa de Clima Organizacional 2026</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
