@@ -396,13 +396,22 @@ function renderSurvey() {
   const state = { answers: {}, openStrengths: '', openImprove: '' };
   const totalSteps = CONFIG.pillars.length + 1;
 
+  function scrollSurveyTop() {
+    setTimeout(() => {
+      const target = document.querySelector('#surveyContent');
+      if (!target) return;
+      const y = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 18);
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 40);
+  }
+
   function draw() {
     const progress = Math.max(0, ((step + 1) / totalSteps) * 100);
     $('#progressFill').style.width = `${progress}%`;
     $('#stepList').innerHTML = CONFIG.pillars.map((p,i)=>`<div class="step-item ${i===step?'active':''}">${i+1}. ${p.shortName}</div>`).join('') + `<div class="step-item ${step===CONFIG.pillars.length?'active':''}">Finalização</div>`;
     if (step === -1) {
       $('#surveyContent').innerHTML = introHtml();
-      $('#startBtn').onclick = () => { step = 0; draw(); };
+      $('#startBtn').onclick = () => { step = 0; draw(); scrollSurveyTop(); };
       return;
     }
     if (step < CONFIG.pillars.length) renderPillarStep(CONFIG.pillars[step]); else renderFinalStep();
@@ -414,18 +423,18 @@ function renderSurvey() {
     const qs = p.questions.map((q,idx)=>`
       <div class="question"><h4>${idx+1}. ${q}</h4><div class="scale">${[1,2,3,4,5].map(v=>`<label><input type="radio" name="q${idx}" value="${v}" ${state.answers[p.id]?.[idx]==v?'checked':''}><div>${v}</div><small>${['Discordo totalmente','Discordo parcialmente','Neutro','Concordo parcialmente','Concordo totalmente'][v-1]}</small></label>`).join('')}</div></div>`).join('');
     $('#surveyContent').innerHTML = `<div class="card"><span class="pill">${p.icon} Pilar ${step+1}</span><h2>${p.name}</h2><p>${p.description}</p><form id="pillarForm">${qs}<div class="btn-row"><button type="button" class="btn alt" id="prevBtn">Voltar</button><button class="btn">${step === CONFIG.pillars.length-1 ? 'Ir para perguntas finais' : 'Próximo pilar'}</button></div></form></div>`;
-    $('#prevBtn').onclick = () => { step--; draw(); };
+    $('#prevBtn').onclick = () => { step--; draw(); scrollSurveyTop(); };
     $('#pillarForm').onsubmit = (e) => {
       e.preventDefault();
       const values = p.questions.map((_, idx) => Number(new FormData(e.target).get(`q${idx}`)));
       if (values.some(v=>!v)) return toast('Responda todas as perguntas deste pilar.');
       state.answers[p.id] = values;
-      step++; draw();
+      step++; draw(); scrollSurveyTop();
     };
   }
   function renderFinalStep() {
     $('#surveyContent').innerHTML = `<div class="card"><span class="pill">Finalização</span><h2>Perguntas abertas</h2><div class="field"><label>Quais são hoje os três principais pontos fortes da Luncena?</label><textarea id="openStrengths" rows="4">${state.openStrengths}</textarea></div><div class="field"><label>Quais são hoje os três principais pontos que a Luncena precisa melhorar?</label><textarea id="openImprove" rows="4">${state.openImprove}</textarea></div><br><div class="btn-row"><button class="btn alt" id="backFinal">Voltar</button><button class="btn" id="finishSurvey">Finalizar pesquisa</button></div></div>`;
-    $('#backFinal').onclick = () => { step--; draw(); };
+    $('#backFinal').onclick = () => { step--; draw(); scrollSurveyTop(); };
     $('#finishSurvey').onclick = () => {
       state.openStrengths = $('#openStrengths').value.trim();
       state.openImprove = $('#openImprove').value.trim();
@@ -436,6 +445,7 @@ function renderSurvey() {
       });
       saveDB();
       localStorage.removeItem(USER_KEY);
+      scrollSurveyTop();
       $('#surveyContent').innerHTML = `<div class="card"><span class="pill">Pesquisa enviada</span><h2>Obrigado por participar!</h2><p>Sua resposta foi registrada com sucesso. A análise principal será exibida de forma consolidada e anônima.</p><div class="btn-row"><a class="btn" href="admin.html">Ver área administrativa</a><a class="btn alt" href="index.html">Nova resposta</a></div></div>`;
     };
   }
